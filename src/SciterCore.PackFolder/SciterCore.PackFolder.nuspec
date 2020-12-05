@@ -33,7 +33,7 @@
     <file src="buildMultiTargeting\**\*.props" target="buildMultiTargeting\netstandard2.0" />
     <file src="buildMultiTargeting\**\*.props" target="buildMultiTargeting\netcoreapp2.0" />
     <file src="buildMultiTargeting\**\*.props" target="buildMultiTargeting\xamarinmac20" />
-    <file src="..\sciter-sdk\bin.win\packfolder.exe" target="scripts\packfolder.exe" />
-    <file src="..\sciter-sdk\bin.osx\packfolder" target="scripts\packfolder" />
+    <file src="..\..\sciter-sdk\bin.win\packfolder.exe" target="scripts\packfolder.exe" />
+    <file src="..\..\sciter-sdk\bin.osx\packfolder" target="scripts\packfolder" />
   </files>
 </package>
