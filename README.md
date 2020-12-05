@@ -1,7 +1,7 @@
 ## SciterCore.PackFolder
 PackFolder MSBuild Task(s) for embedding Sciter packed binaries into Project resources.
 
-![Nuget](https://img.shields.io/nuget/v/SciterCore.PackFolder)
+[![Nuget](https://img.shields.io/nuget/v/SciterCore.PackFolder)](https://www.nuget.org/packages/SciterCore.PackFolder/)
 
 | Command                      |  Options                  |  Default  | Description                       |
 | ---------------------------: | :------------------------ | :-------: | :-------------------------------- |
