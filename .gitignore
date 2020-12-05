@@ -348,3 +348,10 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+# JetBrains Rider
+.idea/**
+
+# Ignore SciterCore.PackFolder output
+**/.sciter/*.bin
+**/sciter.build/*.bin
