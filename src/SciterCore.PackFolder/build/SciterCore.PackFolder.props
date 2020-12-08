@@ -2,7 +2,7 @@
   This file is automatically imported by NuGet into a user's project
   when it targets a single framework, or in classic (pre 2017) csproj projects.
 -->
-<Project TreatAsLocalProperty="SciterCorePackFolderTaskFolder;SciterCorePackFolderTaskAssembly;SciterCorePackFolderDirectory">
+<Project TreatAsLocalProperty="SciterCorePackFolderScriptsFolder;SciterCorePackFolderLocation;SciterCorePackFolderAssembly;SciterCorePackFolderDirectory">
 
   <PropertyGroup>
     <SciterCorePackDirectory Condition=" '$(SciterCorePackDirectory)' == '' ">wwwroot</SciterCorePackDirectory>
@@ -11,10 +11,13 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <SciterCorePackFolderTaskFolder>$(MSBuildThisFileDirectory)..\..\scripts\</SciterCorePackFolderTaskFolder>
-    <SciterCorePackFolderTaskAssembly Condition="$([MSBuild]::IsOsPlatform(Windows))">packfolder.exe</SciterCorePackFolderTaskAssembly>
-    <SciterCorePackFolderTaskAssembly Condition="$([MSBuild]::IsOsPlatform(OSX))">packfolder</SciterCorePackFolderTaskAssembly>
-    <SciterCorePackFolderTaskAssembly Condition="$([MSBuild]::IsOsPlatform(Linux))">packfolder</SciterCorePackFolderTaskAssembly>
+    <SciterCorePackFolderScriptsFolder>$(MSBuildThisFileDirectory)..\..\scripts</SciterCorePackFolderScriptsFolder>
+    <SciterCorePackFolderLocation Condition="$([MSBuild]::IsOsPlatform(Windows))">win</SciterCorePackFolderLocation>
+    <SciterCorePackFolderLocation Condition="$([MSBuild]::IsOsPlatform(OSX))">osx</SciterCorePackFolderLocation>
+    <SciterCorePackFolderLocation Condition="$([MSBuild]::IsOsPlatform(Linux))">lnx</SciterCorePackFolderLocation>
+    <SciterCorePackFolderAssembly Condition="$([MSBuild]::IsOsPlatform(Windows))">packfolder.exe</SciterCorePackFolderAssembly>
+    <SciterCorePackFolderAssembly Condition="$([MSBuild]::IsOsPlatform(OSX))">packfolder</SciterCorePackFolderAssembly>
+    <SciterCorePackFolderAssembly Condition="$([MSBuild]::IsOsPlatform(Linux))">packfolder</SciterCorePackFolderAssembly>
     <SciterCorePackFolderDirectory>sciter.build</SciterCorePackFolderDirectory>
   </PropertyGroup>
 
@@ -22,7 +25,7 @@
   <Target Name="SciterCorePackFolderPreBuild" BeforeTargets="PreBuildEvent" Condition=" '$(SciterCorePackType)' == 'binary' ">
     <Message Text="Building Sciter archive (binary)..."/>
     <MakeDir Directories="$(ProjectDir)$(SciterCorePackFolderDirectory)" />
-    <Exec ContinueOnError="false" Command="$(SciterCorePackFolderTaskFolder)$(SciterCorePackFolderTaskAssembly) &quot;$(ProjectDir)$(SciterCorePackDirectory)&quot; &quot;$(ProjectDir)$(SciterCorePackFolderDirectory)\$(ProjectName).bin&quot; -binary" />
+    <Exec ContinueOnError="false" Command="$(SciterCorePackFolderScriptsFolder)\$(SciterCorePackFolderLocation)\$(SciterCorePackFolderAssembly) &quot;$(ProjectDir)$(SciterCorePackDirectory)&quot; &quot;$(ProjectDir)$(SciterCorePackFolderDirectory)\$(ProjectName).bin&quot; -binary" />
   </Target>
 
   <!-- Add the binary created above to the Embedded Resources of the project -->
