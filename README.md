@@ -4,11 +4,13 @@ PackFolder MSBuild Task(s) for embedding Sciter packed binaries into Project res
 [![Build status](https://dev.azure.com/wdcossey/SciterCore/_apis/build/status/SciterCore.PackFolder-import)](https://dev.azure.com/wdcossey/SciterCore/_build/latest?definitionId=12&branchName=main)
 [![Nuget](https://img.shields.io/nuget/v/SciterCore.PackFolder)](https://www.nuget.org/packages/SciterCore.PackFolder/)
 
-| Command                      |  Options                  |  Default  | Description                       |
-| ---------------------------: | :------------------------ | :-------: | :-------------------------------- |
-| `SciterCorePackType`         | `binary`                  | `binary`  | The PackFolder option; Only `binary` is currently supported, to disable folder packing use any other value (i.e `none`). |
-| `SciterCorePackDirectory`    | absolute or relative path | `wwwroot` | Path to the folder you would like to pack.                                                                               |
-| `SciterCorePackCopyToOutput` | `true` or `false`         | `false`   | Useful if you do not want to pack the files and simply want them copied to the `$(TargetDir)` during the build process.  |
+| Command                      |  Options                      |  Default         | Description                                                                                                              |
+| ---------------------------: | :---------------------------- | :--------------: | :----------------------------------------------------------------------------------------------------------------------- |
+| `SciterCorePackType`         | `binary`                      | `binary`         | The PackFolder option; Only `binary` is currently supported, to disable folder packing use any other value (i.e `none`). |
+| `SciterCorePackDirectory`    | `absolute` or `relative` path | `wwwroot`        | Path to the folder you would like to pack.                                                                               |
+| `SciterCorePackCopyToOutput` | `true` or `false`             | `false`          | Useful if you do not want to pack the files and simply want them copied to the `$(TargetDir)` during the build process.  |
+| `SciterCoreResourceName`     |                               | `SciterResource` | Name of the resource to be embedded in the output assembly                                                               |
+| `SciterCorePackFileName`     |                               | `$(ProjectName)` | Name of output file from `packfolder` (when using `binary` packing)                                                     |
 
 #### Notes:
 

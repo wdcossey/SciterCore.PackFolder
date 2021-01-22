@@ -6,8 +6,10 @@
 
   <PropertyGroup>
     <SciterCorePackDirectory Condition=" '$(SciterCorePackDirectory)' == '' ">wwwroot</SciterCorePackDirectory>
+    <SciterCorePackFileName Condition=" '$(SciterCorePackFileName)' == '' ">$(ProjectName)</SciterCorePackFileName>
     <SciterCorePackType Condition=" '$(SciterCorePackType)' == '' ">binary</SciterCorePackType>
     <SciterCorePackCopyToOutput Condition=" '$(SciterCorePackCopyToOutput)' == '' ">false</SciterCorePackCopyToOutput>
+    <SciterCoreResourceName Condition=" '$(SciterCoreResourceName)' == '' ">SciterResource</SciterCoreResourceName>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -25,14 +27,14 @@
   <Target Name="SciterCorePackFolderPreBuild" BeforeTargets="PreBuildEvent" Condition=" '$(SciterCorePackType)' == 'binary' ">
     <Message Text="Building Sciter archive (binary)..."/>
     <MakeDir Directories="$(ProjectDir)$(SciterCorePackFolderDirectory)" />
-    <Exec ContinueOnError="false" Command="$(SciterCorePackFolderScriptsFolder)\$(SciterCorePackFolderLocation)\$(SciterCorePackFolderAssembly) &quot;$(ProjectDir)$(SciterCorePackDirectory)&quot; &quot;$(ProjectDir)$(SciterCorePackFolderDirectory)\$(ProjectName).bin&quot; -binary" />
+    <Exec ContinueOnError="false" Command="$(SciterCorePackFolderScriptsFolder)\$(SciterCorePackFolderLocation)\$(SciterCorePackFolderAssembly) &quot;$(ProjectDir)$(SciterCorePackDirectory)&quot; &quot;$(ProjectDir)$(SciterCorePackFolderDirectory)\$(SciterCorePackFileName).bin&quot; -binary" />
   </Target>
 
   <!-- Add the binary created above to the Embedded Resources of the project -->
   <Target Name="SciterCorePackFolderEmbedLocal" AfterTargets="PrepareForBuild" Condition=" '$(SciterCorePackType)' == 'binary' ">
     <ItemGroup>
-      <EmbeddedResource Include="$(ProjectDir)$(SciterCorePackFolderDirectory)\$(ProjectName).bin">
-        <LogicalName>SciterResource</LogicalName>
+      <EmbeddedResource Include="$(ProjectDir)$(SciterCorePackFolderDirectory)\$(SciterCorePackFileName).bin">
+        <LogicalName>$(SciterCoreResourceName)</LogicalName>
       </EmbeddedResource>
     </ItemGroup>
   </Target>

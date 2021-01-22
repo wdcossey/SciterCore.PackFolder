@@ -8,7 +8,7 @@
     <owners>wdcossey</owners>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <license type="expression">GPL-3.0-or-later</license>
-    <projectUrl>https://github.com/wdcossey/SciterCore</projectUrl>
+    <projectUrl>https://github.com/wdcossey/SciterCore.PackFolder</projectUrl>
     <description>SciterCore PackFolder tasks for embedding Sciter resource files.</description>
     <copyright>© Sciter.</copyright>
     <tags>Sciter SciterCore PackFolder</tags>
@@ -24,16 +24,22 @@
     <file src="..\..\images\sciter_nuget_icon.png" target="images\icon.png" />
     <file src="lib\_._" target="lib/net45/_._" />
     <file src="lib\_._" target="lib/netstandard2.0/_._" />
+    <file src="lib\_._" target="lib/netstandard2.1/_._" />
     <file src="lib\_._" target="lib/netcoreapp2.0/_._" />
+    <file src="lib\_._" target="lib/netcoreapp3.1/_._" />
     <file src="lib\_._" target="lib/xamarinmac20/_._" />
     <file src="build\**\*.props" target="build\net45" />
     <file src="build\**\*.props" target="build\netstandard2.0" />
+    <file src="build\**\*.props" target="build\netstandard2.1" />
     <file src="build\**\*.props" target="build\netcoreapp2.0" />
+    <file src="build\**\*.props" target="build\netcoreapp3.1" />
     <file src="build\**\*.props" target="build\xamarinmac20" />
-    <file src="buildMultiTargeting\**\*.props" target="buildMultiTargeting\net45" />
-    <file src="buildMultiTargeting\**\*.props" target="buildMultiTargeting\netstandard2.0" />
-    <file src="buildMultiTargeting\**\*.props" target="buildMultiTargeting\netcoreapp2.0" />
-    <file src="buildMultiTargeting\**\*.props" target="buildMultiTargeting\xamarinmac20" />
+    <file src="buildMultiTargeting\net45\*.props" target="buildMultiTargeting\net45" />
+    <file src="buildMultiTargeting\netstandard2.0\*.props" target="buildMultiTargeting\netstandard2.0" />
+    <file src="buildMultiTargeting\netstandard2.1\*.props" target="buildMultiTargeting\netstandard2.1" />
+    <file src="buildMultiTargeting\netcoreapp2.0\*.props" target="buildMultiTargeting\netcoreapp2.0" />
+    <file src="buildMultiTargeting\netcoreapp3.1\*.props" target="buildMultiTargeting\netcoreapp3.1" />
+    <file src="buildMultiTargeting\xamarinmac20\*.props" target="buildMultiTargeting\xamarinmac20" />
     <file src="..\..\sciter-sdk\bin.win\packfolder.exe" target="scripts\win\packfolder.exe" />
     <file src="..\..\sciter-sdk\bin.osx\packfolder" target="scripts\osx\packfolder" />
     <file src="..\..\sciter-sdk\bin.lnx\packfolder" target="scripts\lnx\packfolder" />
