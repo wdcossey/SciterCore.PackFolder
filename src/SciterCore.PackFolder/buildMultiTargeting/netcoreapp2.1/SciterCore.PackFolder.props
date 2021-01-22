@@ -3,5 +3,5 @@
   when it targets multiple frameworks, e.g. <TargetFrameworks>net46;netcoreapp1.0</TargetFrameworks>
 -->
 <Project>
-  <Import Project="..\..\build\netcoreapp2.0\SciterCore.PackFolder.props"/>
+  <Import Project="..\..\build\netcoreapp2.1\SciterCore.PackFolder.props"/>
 </Project>
