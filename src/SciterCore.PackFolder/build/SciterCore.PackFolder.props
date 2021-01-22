@@ -6,7 +6,7 @@
 
   <PropertyGroup>
     <SciterCorePackDirectory Condition=" '$(SciterCorePackDirectory)' == '' ">wwwroot</SciterCorePackDirectory>
-    <SciterCorePackFileName Condition=" '$(SciterCorePackFileName)' == '' ">$(ProjectName)</SciterCorePackFileName>
+    <SciterCorePackFileName Condition=" '$(SciterCorePackFileName)' == '' ">$(MSBuildProjectName)</SciterCorePackFileName>
     <SciterCorePackType Condition=" '$(SciterCorePackType)' == '' ">binary</SciterCorePackType>
     <SciterCorePackCopyToOutput Condition=" '$(SciterCorePackCopyToOutput)' == '' ">false</SciterCorePackCopyToOutput>
     <SciterCoreResourceName Condition=" '$(SciterCoreResourceName)' == '' ">SciterResource</SciterCoreResourceName>
